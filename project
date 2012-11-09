@@ -5,7 +5,7 @@
 
 # archive - Create phenny.tar.bz2 using git archive
 function archive() {
-   git archive --format=tar --prefix=phenny/ HEAD | bzip2 > phenny.tar.bz2
+   git archive --format=tar --prefix=firewolf/ HEAD | bzip2 > firewolf.tar.bz2
 }
 
 # commit - Check the code into git and push to github

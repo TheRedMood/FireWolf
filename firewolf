@@ -14,7 +14,7 @@ Then run ./phenny again
 import sys, os, imp, optparse
 from textwrap import dedent as trim
 
-dotdir = os.path.expanduser('~/.phenny')
+dotdir = os.path.getcwd()
 
 def check_python_version(): 
    if sys.version_info < (2, 4): 
@@ -25,9 +25,9 @@ def check_python_version():
 def create_default_config(fn): 
    f = open(fn, 'w')
    print >> f, trim("""\
-   nick = 'phenny'
+   nick = 'FireWolf'
    host = 'irc.example.net'
-   channels = ['#example', '#test']
+   channels = ['#talonro']
    owner = 'yournickname'
 
    # password is the NickServ password, serverpass is the server password
@@ -37,7 +37,7 @@ def create_default_config(fn):
    # These are people who will be able to use admin.py's functions...
    admins = [owner, 'someoneyoutrust']
    # But admin.py is disabled by default, as follows:
-   exclude = ['admin']
+   exclude = ['admin', 'etymology']
 
    # If you want to enumerate a list of modules rather than disabling
    # some, use "enable = ['example']", which takes precedent over exclude
