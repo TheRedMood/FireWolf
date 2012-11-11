@@ -12,7 +12,7 @@ import web
 It is important to notice that this almost the same as the wikipedia
 module, but there is no language. So I need to filter that out.
 """
-irouri= 'http://irowiki.org/wiki/%s'
+irouri= 'http://irowiki.org/classic/%s'
 
 # Here we are making a lot of regexes. #TODO Need to get all this commented
 r_tr = re.compile(r'(?ims)<tr[^>]*>.*?</tr>')
@@ -56,10 +56,10 @@ def search(term):
    else: term = term.decode('utf-8')
 
    term = term.replace('_', ' ')
-   try: uri = search.google_search('site:irowiki.org %s' % term)
+   try: uri = search.google_search('site:irowiki.org/classic/ %s' % term)
    except IndexError: return term
    if uri: 
-	  return uri[len('http://irowiki.org/wiki/'):]
+	  return uri[len('http://irowiki.org/classic/'):]
    else: return term
 
 def irowiki(term, last=False): 
@@ -152,6 +152,7 @@ def irowiki(term, last=False):
    term = term.decode('utf-8').encode('utf-8')
    return sentence + ' - ' + (irouri % term)
 
+
 def irowik(phenny, input): 
    origterm = input.groups()[1]
    if not origterm: 
@@ -175,9 +176,9 @@ def irowik(phenny, input):
 
    if result is not None: 
 	  phenny.say(result)
-   else: phenny.say('Can\'t find anything in Wikipedia for "%s".' % origterm)
+   else: phenny.say('Can\'t find anything in irowiki for "%s".' % origterm)
 
-irowik.commands = ['irowik']
+irowik.commands = ['irowik', 'irowiki']
 irowik.priority = 'high'
 
 if __name__ == '__main__': 
