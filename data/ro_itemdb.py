@@ -22,11 +22,11 @@ def right_item(ID, name, desc, buy=0, sell=0, attack=0, defence=0):
 # Variables =============
 
 # File variables
-txtdb = codecs.open('item_db.txt',encoding='utf-8')
-descdb = codecs.open('data/idnum2itemdesctable.txt', encoding='utf-8').read()
+txtdb = codecs.open('raw/item_db.txt',encoding='utf-8')
+descdb = codecs.open('raw/idnum2itemdesctable.txt', encoding='utf-8').read()
 
 # SQL Variables
-conn = sqlite3.connect('ro.db')
+conn = sqlite3.connect('databases/ragnarok.db')
 c = conn.cursor()
 
 # Description variables

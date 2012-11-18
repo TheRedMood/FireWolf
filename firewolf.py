@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 phenny - An IRC Bot
 Copyright 2008, Sean B. Palmer, inamidst.com

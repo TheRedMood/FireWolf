@@ -1,0 +1,4 @@
+Created 20:53 18.11.2012 by Teodor Spæren
+====
+
+All databases, sql, or other will be here.
